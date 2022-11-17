@@ -46,4 +46,9 @@ public final class AssertionFacade {
         var registerButton = elementFinder.findByXPath("/html/body/div/div/div/div/div/div[2]/form/div[4]/div/a");
         assertThat(registerButton.getText()).isEqualTo("Zaregistrujte se");
     }
+
+    public void overSpravnyOdkazNavodyProUcitele(String odkaz) {
+        var url = elementFinder.findByXPath("/html/body/div/div/div/div/div/div/ul/li/a");
+        assertThat(url.getAttribute("href")).isEqualTo(odkaz);
+    }
 }

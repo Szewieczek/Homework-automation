@@ -49,4 +49,14 @@ final class LoginAction {
         var logoutButton = elementFinder.findByXPath("//*[@id=\"logout-link\"]");
         logoutButton.click();
     }
+
+    void klikniNaPrihlasit() {
+        var tlacitkoPrihlasit = elementFinder.findByXPath("/html/body/div/div/div/div/div/div/form/div[3]/div/button");
+        tlacitkoPrihlasit.click();
+    }
+
+    void vypHeslo(String heslo) {
+        var formularNaHeslo = elementFinder.findByXPath("//*[@id=\"password\"]");
+        formularNaHeslo.sendKeys(heslo);
+    }
 }

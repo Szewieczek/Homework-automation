@@ -28,6 +28,11 @@ public final class ApplicationDetailAssertion {
         assertThat(paymentMethodElement.getText()).isEqualTo(zpusobUhrady);
     }
 
+    public void overTermin(String termin) {
+        var DateElement = elementFinder.findByXPath("/html/body/div/div/div/div/div/div[2]");
+        assertThat(DateElement.getText()).contains(termin);
+    }
+
     public void overKrestniJmeno(String krestniJmeno) {
         var firstNameElement = elementFinder.findByXPath("/html/body/div/div/div/div/div/table/tbody/tr[6]/td[2]");
         assertThat(firstNameElement.getText()).isEqualTo(krestniJmeno);
