@@ -27,6 +27,16 @@ public final class AssertionFacade {
         this.detailPrihlasky = new ApplicationDetailAssertion(elementFinder);
     }
 
+    public void overJmenoAPrijmeniUzivatele(String celeJmeno) {
+        var nameElement = elementFinder.findByXPath("//*[@id=\"name\"]");
+        assertThat(nameElement.getAttribute("value").contains(celeJmeno));
+    }
+
+    public void overObec(String obec) {
+        var cityElement = elementFinder.findByXPath("/html/body/div/div/div/div/div/div/div/div[1]/p[1]");
+        assertThat(cityElement.getText()).contains(obec);
+    }
+
     public void overAdresuWwwStranky(String wwwAdresa) {
         var url = elementFinder.findByXPath("/html/body/div/div/div/div/div/div/div/div[1]/p[2]/a");
         assertThat(url.getText()).isEqualTo(wwwAdresa);

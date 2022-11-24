@@ -28,6 +28,11 @@ final class ApplicationAction {
         programmingSectionButton.click();
     }
 
+    void klikniNaVytvoritPrihlaskuJava () {
+        var createApplicationButtonJava = elementFinder.findByXPath("/html/body/div/div/div/div/div[2]/div[2]/div/div[2]/a");
+        createApplicationButtonJava.click();
+    }
+
     void klikniNaVytvoritPrihlasku() {
         var createApplicationButton = elementFinder.findByXPath("/html/body/div/div/div/div/div[2]/div/div/div[2]/a");
         createApplicationButton.click();

@@ -20,7 +20,7 @@ final class PublicMenuAction {
     }
 
     void jdiDoSekceKontakt() {
-        var agreeButton = elementFinder.findByXPath("/html/body/div/header/nav/div/div[1]/a[2]");
+        var agreeButton = elementFinder.findByXPath("//*[@id=\"navbarSupportedContent\"]/div[1]/a[3]");
         agreeButton.click();
     }
 

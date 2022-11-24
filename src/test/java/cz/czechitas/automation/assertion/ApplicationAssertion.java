@@ -22,6 +22,11 @@ public final class ApplicationAssertion {
         this.elementFinder = Objects.requireNonNull(elementFinder);
     }
 
+    public void overTlacitkoDetailUPrvniPrihlasky() {
+        var detailButton = elementFinder.findByXPath("//*[@id=\"DataTables_Table_0\"]/tbody/tr[1]/td[5]/div/a[1]");
+        assertThat(detailButton.getText()).contains("Detail");
+    }
+
     public void overExistenciSloupce(String jmenoSloupce) {
         var column = elementFinder.findByXPath("/html/body/div/div/div/div/div/div[2]/div[2]/div/table/thead/tr");
         assertThat(column.getText()).contains(jmenoSloupce);
